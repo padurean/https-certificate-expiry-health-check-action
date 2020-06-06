@@ -1,0 +1,26 @@
+{
+  "name": "https-certificate-expiry-health-check-action",
+  "version": "1.0.0",
+  "description": "Checks the health and certificate expiration for given URL(s). Written in JS with built-in retry mechanism. Follows redirects.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/padurean/https-certificate-expiry-health-check-action.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build"
+  },
+  "author": "Valentin Padurean",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^3.0.0",
+    "check-cert-expiration": "^3.0.0",
+    "duration-js": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}

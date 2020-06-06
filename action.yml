@@ -1,0 +1,28 @@
+name: 'HTTP(s) URL health check and TLS/SSL certification expiry check'
+description: 'Checks the health and certificate expiration for given URL(s). Written in JS (calls cURL command) with built-in retry mechanism. Follows redirects.'
+author: "Valentin Padurean <purecore.ro@gmail.com>"
+inputs:
+  url:
+    description: Target URL(s), split by |
+    required: true
+  max-attempts:
+    description: Number of failed requests before giving up
+    required: false
+    default: '1'
+  retry-delay:
+    description: Delay duration between retries (e.g. 5s, 1m)
+    required: false
+    default: '3s'
+  follow-redirect:
+    description: Follow redirect if the response has a 3XX status code
+    required: false
+    default: 'false'
+  check-cert:
+    required: false
+    default: 'false'
+branding:
+  icon: shield
+  color: green
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
