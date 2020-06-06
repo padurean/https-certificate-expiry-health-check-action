@@ -8,19 +8,22 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "ncc build"
+    "build": "ncc build",
+    "test": "jest"
   },
   "author": "Valentin Padurean",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.4",
     "@actions/github": "^3.0.0",
-    "check-cert-expiration": "^3.0.0",
-    "duration-js": "^4.0.0"
+    "duration-js": "^4.0.0",
+    "get-ssl-certificate": "^2.3.3"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2"
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.13.2",
+    "jest": "^26.0.1"
   }
 }

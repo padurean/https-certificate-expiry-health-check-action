@@ -10,22 +10,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Check one, no redirect
+    - name: Check one with cURL, no redirect
       uses: ./
       with:
         url: https://postman-echo.com/status/200
-    - name: Check many, no redirect
+    - name: Check many with cURL, no redirect
       uses: ./
       with:
         url: https://postman-echo.com/status/200|https://postman-echo.com/status/304
-    - name: Check one, follow redirect
+    - name: Check one with cURL, follow redirect
       uses: ./
       with:
         url: https://postman-echo.com/status/200
         follow-redirect: yes
-    - name: Check one, with retry
+    - name: Check one with cURL, with retry
       uses: ./
       with:
         url: https://postman-echo.com/status/200
         max-attempts: 3
         retry-delay: 2s
+    - name: Check cert for one
+      uses: ./
+      with:
+        url: https://postman-echo.com/status/200
+        check-cert: yes
+        max-cert-days-left: 1
+        port: 443

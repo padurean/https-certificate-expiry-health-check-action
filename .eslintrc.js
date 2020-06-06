@@ -5,12 +5,14 @@ module.exports = {
         "node": true
     },
     "extends": [
-        "airbnb-base"
+        "airbnb-base",
+        "plugin:jest/recommended"
     ],
     "parserOptions": {
         "ecmaVersion": 11,
         "sourceType": "module"
     },
+    "plugins": ["jest"],
     "rules": {
     }
 };
