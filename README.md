@@ -38,4 +38,10 @@ on:
 
 The action will fail if any of the URLs reports either 4xx or 5xx status codes or if the TLS certificate is expired.
 
-*NOTE* Build script requires Vercel's [NCC](https://www.npmjs.com/package/@zeit/ncc) to be installed on the machine.
+### Build & Test locally:
+
+`npm run build`
+
+`npm run test`
+
+**NOTE**: Build script requires Vercel's [NCC](https://www.npmjs.com/package/@zeit/ncc) to be installed on the machine.
