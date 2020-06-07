@@ -11,6 +11,4 @@ test('cURL-based health check', () => {
   )).not.toThrow();
 });
 
-test('TLS cert check', () => {
-  return expect(checkers.certCheck('postman-echo.com', 443, 3)).resolves.toBeNull();
-});
+test('TLS cert check', () => expect(checkers.certCheck('postman-echo.com', 443, 3)).resolves.toBeNull());

@@ -20,6 +20,12 @@ inputs:
   check-cert:
     required: false
     default: 'false'
+  max-cert-days-left:
+    required: false
+    default: 1
+  port:
+    required: false
+    default: 443
 branding:
   icon: shield
   color: green

@@ -32,7 +32,7 @@ jobs:
     - name: Check cert for one
       uses: ./
       with:
-        url: https://postman-echo.com/status/200
+        url: postman-echo.com
         check-cert: yes
         max-cert-days-left: 1
         port: 443
