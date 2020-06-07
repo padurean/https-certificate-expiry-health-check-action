@@ -1,5 +1,5 @@
 name: 'HTTP(s) URL health check and TLS/SSL certification expiry check'
-description: 'Checks the health and certificate expiration for given URL(s). Written in JS (calls cURL command) with built-in retry mechanism. Follows redirects.'
+description: 'Either pings or checks TLS certificate expiration for given URL(s).'
 author: "Valentin Padurean <purecore.ro@gmail.com>"
 inputs:
   url:
