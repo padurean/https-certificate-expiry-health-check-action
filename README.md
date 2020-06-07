@@ -24,7 +24,7 @@ steps:
       retry-delay: 3s # Optional, only used if max-attempts > 1
 ```
 
-Check [check.yml](./.github/worflows/check.yml) for a complete example.
+Check [check.yml](./.github/workflows/check.yml) for a complete example.
 You may want to run this periodically, though (instead of on push), for example this triggers the workflow every 15 minutes:
 
 ```yaml
