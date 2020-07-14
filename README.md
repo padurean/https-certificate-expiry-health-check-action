@@ -5,7 +5,7 @@ GitHub action that checks the health and certificate expiration for given URL(s)
 ```yaml
 steps:
   - name: Check the health and certificate date for the specified URL(s)
-    uses: padurean/https-certificate-expiry-health-check-action@v1.0
+    uses: padurean/https-certificate-expiry-health-check-action@v1.0.0
     with:
       # Check the following URLs
       url: https://someURL.com|http://someOtherURL.com
