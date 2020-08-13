@@ -44,4 +44,4 @@ The action will fail if any of the URLs reports either 4xx or 5xx status codes o
 
 `npm run test`
 
-**NOTE**: Build script requires Vercel's [NCC](https://www.npmjs.com/package/@zeit/ncc) to be installed on the machine.
+**NOTE**: Build script requires Vercel's [NCC](https://www.npmjs.com/package/@vercel/ncc) to be installed on the machine.
