@@ -1,27 +1,37 @@
-# TLS/SSL/HTTPS certificate expiration and health check action
+# TLS/SSL/HTTPS certificate expiration or health check action
 
-GitHub action that checks the health and certificate expiration for given URL(s). Written in JS (calls cURL command) with built-in retry mechanism. Follows redirects.
+GitHub action that checks the health or certificate expiration for given URL(s). Written in JS (calls cURL command) with built-in retry mechanism. Follows redirects.
+
+The action can either perform an endpoint healthcheck:
 
 ```yaml
 steps:
-  - name: Check the health and certificate date for the specified URL(s)
+  - name: Check the health of the specified URL(s)
     uses: padurean/https-certificate-expiry-health-check-action@v1.0.0
     with:
       # Check the following URLs
       url: https://someURL.com|http://someOtherURL.com
-      # Verify TLS certificate, defaults to "no" (port and max-cert-days-left are only used if this is set to "yes")
-      check-cert: no
-      # Port is only used with check-cert "yes", otherwise it can be included in the URL
-      port: 443
-      # Max number of days till cert expiration; if this value is reached, the check will fail
-      # (only used with check-cert "yes")
-      max-cert-days-left: 1
       # Follow redirects, or just report success on 3xx reponse status codes
       follow-redirect: no # Optional, defaults to "no"
       # Fail this action after this many failed attempts
       max-attempts: 3 # Optional, defaults to 1
       # Delay between retries
       retry-delay: 3s # Optional, only used if max-attempts > 1
+```
+
+Or it can perform a TLS expiration check:
+
+```yaml
+steps:
+  - name: Check the certificate date for the specified domain(s)
+    uses: padurean/https-certificate-expiry-health-check-action@v1.0.0
+    with:
+      # Check the following domains (do not use https:// prefix for TLS format)
+      url: someURL.com|someOtherURL.com
+      # Verify TLS certificate, defaults to "no" (port and max-cert-days-left are only used if this is set to "yes")
+      port: 443 # Optional, defaults to 443
+      # Max number of days till cert expiration; if this value is reached, the check will fail
+      max-cert-days-left: 1
 ```
 
 Check [check.yml](./.github/workflows/check.yml) for a complete example.
@@ -40,8 +50,9 @@ The action will fail if any of the URLs reports either 4xx or 5xx status codes o
 
 ### Build & Test locally:
 
-`npm run build`
-
-`npm run test`
+```bash
+npm run build
+npm run test
+```
 
 **NOTE**: Build script requires Vercel's [NCC](https://www.npmjs.com/package/@vercel/ncc) to be installed on the machine.
