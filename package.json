@@ -14,7 +14,7 @@
   "author": "Valentin Padurean",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.4",
+    "@actions/core": "^1.9.1",
     "@actions/github": "^3.0.0",
     "duration-js": "^4.0.0",
     "get-ssl-certificate": "^2.3.3"
